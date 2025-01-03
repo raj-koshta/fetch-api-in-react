@@ -7,24 +7,32 @@ const HowNotToFetchApi = () => {
 
     const API = "https://jsonplaceholder.typicode.com/posts";
 
-    // How not use Fetch API
-    // fetch(API)
-    // .then((res) => res.json())
-    // .then((data)=> {
-    //     // setApiData(data);
-    // })
-    // .catch((error) => console.log(error));
+    const fetchData = ()=>{
+        fetch(API)
+        .then((res) => res.json())
+        .then((data)=> {
+            setApiData(data);
+        })
+        .catch((error) => console.log(error));
+    }
     
     // How to use Fetch API
     
-    // useEffect(()=>{
-    //     fetch(API)
-    //     .then((res) => res.json())
-    //     .then((data)=> {
-    //         setApiData(data);
-    //     })
-    //     .catch((error) => console.log(error));
-    // },[])
+    useEffect(()=>{
+
+        // case : 1 
+        // fetch(API)
+        // .then((res) => res.json())
+        // .then((data)=> {
+        //     setApiData(data);
+        // })
+        // .catch((error) => console.log(error));
+
+
+        // case: 2
+
+        fetchData();
+    },[])
 
     return (
         <div className='container effect-container'>
